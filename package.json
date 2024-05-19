@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.5",
+    "@rollup/rollup-linux-x64-gnu": "^4.17.2",
     "astro": "^4.5.6"
   },
   "devDependencies": {}
