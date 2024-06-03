@@ -13,10 +13,10 @@ const pageTitle = "首页"
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
   </head>
-  <body>
+  <body class="bg-base-100 text-base-content">
     <Header />
     <h1>{pageTitle}</h1>
-        <slot />
+    <slot />
     <Footer />
     <script>
       import "../scripts/menu.js"

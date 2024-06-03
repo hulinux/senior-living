@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
+import FontSearch from "../components/FontSearch.svelte"
 const { pageTitle } = Astro.props
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
+  <FontSearch client:only="svelte" />
 </BaseLayout>
