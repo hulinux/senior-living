@@ -64,7 +64,7 @@
     fast-xml-parser "^4.3.6"
     kleur "^4.1.5"
 
-"@astrojs/svelte@^5.4.0":
+"@astrojs/svelte@^5.6.0":
   version "5.6.0"
   resolved "https://registry.npmmirror.com/@astrojs/svelte/-/svelte-5.6.0.tgz#b747a05e4641f71b23165e3046368c46bc55d999"
   integrity sha512-rdHBlqMQE6UOA1ySF1t3sdb6pf44yP8Dd0TqxGO0yR4HAgbtKtW8XToJ3mQ1PmuRmf5fisH9xzt3EEx7NAQuZg==
@@ -1242,9 +1242,9 @@ culori@^3:
   integrity sha512-pHJg+jbuFsCjz9iclQBqyL3B2HLCBF71BwVNujUYEvCeQMvV97R59MNK3R2+jgJ3a1fcZgI9B3vYgz8lzr/BFQ==
 
 daisyui@^4.11.1:
-  version "4.12.2"
-  resolved "https://registry.npmmirror.com/daisyui/-/daisyui-4.12.2.tgz#9abdd513572502e7905f2aa12c5e958df417520e"
-  integrity sha512-ed3EFwPRLN+9+/MYPRB1pYjk6plRCBMobfBdSeB3voAS81KdL2pCKtbwJfUUpDdOnJ0F8T6oRdVX02P6UCD0Hg==
+  version "4.12.6"
+  resolved "https://registry.npmmirror.com/daisyui/-/daisyui-4.12.6.tgz#0039d18dd4a558d11b6dbaf3a3a73066b93f14d3"
+  integrity sha512-Tz/rvi2ws7+7uh51JgGpsRqnASwI13t6Sz53ePaGkhLzhr4SQI4wwNxSypE8lj/d4gl/+lbHK1phIKUo+d2YNw==
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
