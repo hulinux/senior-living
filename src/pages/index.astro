@@ -1,10 +1,11 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro"
-import FontSearch from "../components/FontSearch.svelte"
+import NoneLayout from "../layouts/NoneLayout.astro"
+import SearchAndInfiniteScroll from "../components/SearchAndInfiniteScroll.svelte"
+
 const { pageTitle } = Astro.props
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<NoneLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
-  <FontSearch client:only="svelte" />
-</BaseLayout>
+  <SearchAndInfiniteScroll client:only="svelte" />
+</NoneLayout>
