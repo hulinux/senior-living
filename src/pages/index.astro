@@ -2,10 +2,10 @@
 import NoneLayout from "../layouts/NoneLayout.astro"
 import SearchAndInfiniteScroll from "../components/SearchAndInfiniteScroll.svelte"
 
-// const { pageTitle } = Astro.props
+const { pageTitle = "My Home" } = Astro.props
 ---
 
-<NoneLayout pageTitle={"My Home"}>
+<NoneLayout pageTitle={pageTitle}>
   <h2>My awesome blog subtitle</h2>
   <SearchAndInfiniteScroll client:only="svelte" />
 </NoneLayout>
