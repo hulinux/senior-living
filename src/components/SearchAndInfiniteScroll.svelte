@@ -5,7 +5,7 @@
   let searchTerm = ""
   let filteredData = []
   let displayedData = []
-  let itemsPerLoad = 15
+  let itemsPerLoad = 50
   let loading = false
   let containerRef
 
@@ -68,14 +68,36 @@
     </span>
   </div>
   <div bind:this={containerRef} class="h-[calc(100vh-200px)] overflow-y-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div
+      class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4"
+    >
       {#each displayedData as item}
-        <div class="card bg-base-100 shadow-xl">
+        <div class="card card-compact bg-base-100 shadow-xl">
           <div class="card-body">
-            <h2 class="card-title">{item.name}</h2>
-            <p>{item.description}</p>
-            <div class="card-actions justify-end">
-              <a href={item.path} class="btn btn-primary">Download</a>
+            <div class="join">
+              <span class="card-title text-sm">{item.name}</span>
+              <p>{item.description}</p>
+              <div class="card-actions justify-end">
+                <a
+                  href={item.path}
+                  class="tooltip"
+                  data-tip="download this font"
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2m-4-4l-4 4m0 0l-4-4m4 4V4"
+                    />
+                  </svg></a
+                >
+              </div>
             </div>
           </div>
         </div>

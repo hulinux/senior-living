@@ -6,6 +6,8 @@ const { pageTitle = "My Home" } = Astro.props
 ---
 
 <NoneLayout pageTitle={pageTitle}>
-  <h2>My awesome blog subtitle</h2>
+  <div class="join">
+    <h2>Awesome Resource</h2> &nbsp;- &nbsp;<h3>CAD Fonts</h3>
+  </div>
   <SearchAndInfiniteScroll client:only="svelte" />
 </NoneLayout>
