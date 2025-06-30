@@ -1,20 +1,22 @@
 <script>
+  import { run } from 'svelte/legacy';
+
   import { onMount } from "svelte"
   import { fade } from "svelte/transition"
-  let data = []
-  let searchTerm = ""
-  let filteredData = []
-  let displayedData = []
+  let data = $state([])
+  let searchTerm = $state("")
+  let filteredData = $state([])
+  let displayedData = $state([])
   let itemsPerLoad = 50
-  let loading = false
-  let containerRef
+  let loading = $state(false)
+  let containerRef = $state()
 
-  $: {
+  run(() => {
     filteredData = data.filter((item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
     )
     displayedData = filteredData.slice(0, itemsPerLoad)
-  }
+  });
 
   function loadMore() {
     if (loading) return
