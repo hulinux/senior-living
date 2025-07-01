@@ -16,7 +16,8 @@
   "devDependencies": {
     "@astrojs/tailwind": "6.0.2",
     "astro": "^5.10.1",
-    "daisyui": "^4.11.1",
+    "daisyui": "^5.0.43",
+    "postcss": "^8.5.6",
     "svelte": "^5.1.16",
     "tailwindcss": "^3.4.3",
     "typescript": "^5.8.3"

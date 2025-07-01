@@ -32,7 +32,8 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/svelte", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:7.1.0"],\
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
           ["astro", "npm:5.10.1"],\
-          ["daisyui", "npm:4.12.24"],\
+          ["daisyui", "npm:5.0.43"],\
+          ["postcss", "npm:8.5.6"],\
           ["senior-living", "workspace:."],\
           ["svelte", "npm:5.34.8"],\
           ["tailwindcss", "npm:3.4.17"],\
@@ -1932,17 +1933,6 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["css-selector-tokenizer", [\
-      ["npm:0.8.0", {\
-        "packageLocation": "../.yarn/berry/cache/css-selector-tokenizer-npm-0.8.0-b6bad298a3-10c0.zip/node_modules/css-selector-tokenizer/",\
-        "packageDependencies": [\
-          ["css-selector-tokenizer", "npm:0.8.0"],\
-          ["cssesc", "npm:3.0.0"],\
-          ["fastparse", "npm:1.1.2"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["css-tree", [\
       ["npm:3.1.0", {\
         "packageLocation": "../.yarn/berry/cache/css-tree-npm-3.1.0-19cd308584-10c0.zip/node_modules/css-tree/",\
@@ -1963,24 +1953,11 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
-    ["culori", [\
-      ["npm:3.3.0", {\
-        "packageLocation": "../.yarn/berry/cache/culori-npm-3.3.0-75ee2b3b84-10c0.zip/node_modules/culori/",\
-        "packageDependencies": [\
-          ["culori", "npm:3.3.0"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
     ["daisyui", [\
-      ["npm:4.12.24", {\
-        "packageLocation": "../.yarn/berry/cache/daisyui-npm-4.12.24-6b68b1dcfc-10c0.zip/node_modules/daisyui/",\
+      ["npm:5.0.43", {\
+        "packageLocation": "../.yarn/berry/cache/daisyui-npm-5.0.43-98d0177213-10c0.zip/node_modules/daisyui/",\
         "packageDependencies": [\
-          ["css-selector-tokenizer", "npm:0.8.0"],\
-          ["culori", "npm:3.3.0"],\
-          ["daisyui", "npm:4.12.24"],\
-          ["picocolors", "npm:1.1.1"],\
-          ["postcss-js", "virtual:6b68b1dcfca601dbeb7c1a4e82b12a78b4f77ecbb2895bbea7e148c35cb1c6e22ed092bdbe251c59c6b75cffc7b6311e94dc0bed4c77d1dcefab30404e6f89dc#npm:4.0.1"]\
+          ["daisyui", "npm:5.0.43"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2377,15 +2354,6 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["fast-xml-parser", "npm:5.2.5"],\
           ["strnum", "npm:2.1.1"]\
-        ],\
-        "linkType": "HARD"\
-      }]\
-    ]],\
-    ["fastparse", [\
-      ["npm:1.1.2", {\
-        "packageLocation": "../.yarn/berry/cache/fastparse-npm-1.1.2-6a35154770-10c0.zip/node_modules/fastparse/",\
-        "packageDependencies": [\
-          ["fastparse", "npm:1.1.2"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4284,20 +4252,6 @@ const RAW_RUNTIME_STATE =
           "postcss"\
         ],\
         "linkType": "HARD"\
-      }],\
-      ["virtual:6b68b1dcfca601dbeb7c1a4e82b12a78b4f77ecbb2895bbea7e148c35cb1c6e22ed092bdbe251c59c6b75cffc7b6311e94dc0bed4c77d1dcefab30404e6f89dc#npm:4.0.1", {\
-        "packageLocation": "./.yarn/__virtual__/postcss-js-virtual-f9d0de4712/2/.yarn/berry/cache/postcss-js-npm-4.0.1-2c4ee70bf3-10c0.zip/node_modules/postcss-js/",\
-        "packageDependencies": [\
-          ["@types/postcss", null],\
-          ["camelcase-css", "npm:2.0.1"],\
-          ["postcss", null],\
-          ["postcss-js", "virtual:6b68b1dcfca601dbeb7c1a4e82b12a78b4f77ecbb2895bbea7e148c35cb1c6e22ed092bdbe251c59c6b75cffc7b6311e94dc0bed4c77d1dcefab30404e6f89dc#npm:4.0.1"]\
-        ],\
-        "packagePeers": [\
-          "@types/postcss",\
-          "postcss"\
-        ],\
-        "linkType": "HARD"\
       }]\
     ]],\
     ["postcss-load-config", [\
@@ -4772,7 +4726,8 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/svelte", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:7.1.0"],\
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
           ["astro", "npm:5.10.1"],\
-          ["daisyui", "npm:4.12.24"],\
+          ["daisyui", "npm:5.0.43"],\
+          ["postcss", "npm:8.5.6"],\
           ["senior-living", "workspace:."],\
           ["svelte", "npm:5.34.8"],\
           ["tailwindcss", "npm:3.4.17"],\
