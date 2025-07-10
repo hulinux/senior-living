@@ -1,0 +1,33 @@
+---
+interface Props {}
+
+const { } = Astro.props;
+
+// Sample carousel images (replace with actual image paths)
+const carouselImages = [
+  {
+    src: '/images/hero1.jpg',
+    alt: '老年生活服务场景1'
+  },
+  {
+    src: '/images/hero2.jpg',
+    alt: '老年生活服务场景2'
+  },
+  {
+    src: '/images/hero3.jpg',
+    alt: '老年生活服务场景3'
+  }
+];
+---
+
+<div class="carousel w-screen h-[300px] carousel-vertical">
+  {carouselImages.map((image, index) => (
+    <div id={`slide${index + 1}`} class="carousel-item w-screen">
+      <img 
+        src={image.src} 
+        alt={image.alt} 
+        class="w-screen h-full object-cover"
+      />
+    </div>
+  ))}
+</div>
