@@ -1,0 +1,75 @@
+---
+import LayoutFooter from '../components/LayoutFooter.astro'
+import LayoutHeader from '../components/LayoutHeader.astro'
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="description" content={description} />
+  <title>{title}</title>
+  <style>
+    :root {
+      /* Light theme colors */
+      --light-bg: #ffffff;
+      --light-text: #1F2937;
+      --light-purple: #8B5CF6;
+      --light-purple-dark: #6D28D9;
+      
+      /* Dark theme colors */
+      --dark-bg: #1F2937;
+      --dark-text: #E5E7EB;
+      --dark-purple: #8B5CF6;
+      --dark-purple-dark: #6D28D9;
+      
+      /* Default to light theme */
+      --directus-bg: var(--light-bg);
+      --directus-text: var(--light-text);
+      --directus-purple: var(--light-purple);
+      --directus-purple-dark: var(--light-purple-dark);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --directus-bg: var(--dark-bg);
+        --directus-text: var(--dark-text);
+        --directus-purple: var(--dark-purple);
+        --directus-purple-dark: var(--dark-purple-dark);
+      }
+    }
+
+    body {
+      background-color: var(--directus-bg);
+      color: var(--directus-text);
+    }
+    
+    .hero-section {
+      background-color: var(--directus-purple);
+      color: white;
+      padding: 4rem 0;
+    }
+    
+    .feature-section {
+      background-color: var(--directus-purple-dark);
+      color: white;
+      padding: 4rem 0;
+    }
+  </style>
+</head>
+<body>
+  <LayoutHeader />
+  <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    <slot />
+  </main>
+  <LayoutFooter />
+</body>
+</html>

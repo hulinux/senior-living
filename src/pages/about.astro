@@ -1,56 +1,103 @@
 ---
-import "../styles/global.css"
-import BaseLayout from "../layouts/BaseLayout.astro"
-const { pageTitle } = Astro.props
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 
-const identity = {
-  firstName: "莎拉",
-  country: "加拿大",
-  occupation: "技术撰稿人",
-  hobbies: ["摄影", "观鸟", "棒球"]
-}
-
-const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"]
-const happy = true
-const finished = false
-const goal = 3
-const skillColor = "navy"
-const fontWeight = "bold"
-const textCase = "uppercase"
+const title = '关于我们 - 老年生活服务平台';
+const description = '了解我们的使命、愿景和团队，探索我们如何为老年人提供高品质的生活服务。';
 ---
 
-<BaseLayout pageTitle={pageTitle}>
-  <h1>{pageTitle}</h1>
-  <h2>……和我的新 Astro 网站！</h2>
+<DefaultLayout title={title} description={description}>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 sm:text-5xl">关于我们</h1>
+      <p class="mt-4 text-xl text-gray-600 max-w-2xl mx-auto">
+        我们致力于为老年人提供高品质的生活服务，让每一位老年人都能享受到舒适、便捷、有尊严的生活。
+      </p>
+    </div>
 
-  <p>
-    我正在学习 Astro
-    的入门教程。这是我网站上的第二个页面，也是我自己建立的第一页面！
-  </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Mission Section -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">我们的使命</h2>
+        <p class="text-gray-600">
+          通过创新的服务模式和技术手段，提升老年人的生活质量，帮助他们实现独立、健康、快乐的晚年生活。
+        </p>
+      </div>
 
-  <p>随着我完成更多教程，该站点将更新，所以请继续查看我的旅程将如何进行吧！</p>
-  <p>以下是关于我的几个事实：</p>
-  <ul>
-    <li>我的名字是{identity.firstName}.</li>
-    <li>我住在{identity.country}。我的职业是{identity.occupation}。</li>
-    {
-      identity.hobbies.length >= 2 && (
-        <li>
-          我的两个习惯：{identity.hobbies[0]}和{identity.hobbies[1]}
-        </li>
-      )
-    }
-  </ul>
-  <p>我的技能是：</p>
-  <ul>
-    {skills.map((skill) => <li class="skill">{skill}</li>)}
-  </ul>
-  {happy && <p>我非常乐意学习 Astro！</p>}
+      <!-- Vision Section -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">我们的愿景</h2>
+        <p class="text-gray-600">
+          成为国内领先的老年生活服务提供商，建立一个充满关爱、尊重和包容的老年人社区。
+        </p>
+      </div>
 
-  {finished && <p>我完成了这节教程！</p>}
+      <!-- Values Section -->
+      <div class="bg-white rounded-lg shadow-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-4">我们的价值观</h2>
+        <ul class="list-disc list-inside text-gray-600">
+          <li>尊重每一位老年人的个性和需求</li>
+          <li>提供专业、贴心的服务</li>
+          <li>不断追求创新和进步</li>
+          <li>建立和谐的社区关系</li>
+        </ul>
+      </div>
+    </div>
 
-  {goal === 3 ? <p>我的目标是在三天内完成。</p> : <p>我的目标不是 3 天。</p>}
-</BaseLayout>
-<script>
-  import "../scripts/menu.js"
-</script>
+    <!-- Team Section -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">我们的团队</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Team Member Cards -->
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="h-32 w-32 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-4">
+            <span class="text-3xl font-bold">CEO</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">张三</h3>
+          <p class="text-gray-600">首席执行官</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="h-32 w-32 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-4">
+            <span class="text-3xl font-bold">CTO</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">李四</h3>
+          <p class="text-gray-600">首席技术官</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="h-32 w-32 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-4">
+            <span class="text-3xl font-bold">COO</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">王五</h3>
+          <p class="text-gray-600">首席运营官</p>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg p-6">
+          <div class="h-32 w-32 mx-auto rounded-full bg-purple-100 flex items-center justify-center mb-4">
+            <span class="text-3xl font-bold">CMO</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">赵六</h3>
+          <p class="text-gray-600">首席营销官</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="mt-16 bg-gradient-to-r from-purple-50 to-purple-100 rounded-lg p-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8">联系我们</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">总部地址</h3>
+          <p class="text-gray-600">
+            上海市XX区XX路XX号<br>
+            邮编：XXXXXX
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">联系方式</h3>
+          <p class="text-gray-600">
+            电话：000-0000-0000<br>
+            邮箱：contact@example.com
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+</DefaultLayout>

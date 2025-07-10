@@ -1,28 +1,40 @@
 ---
-import NoneLayout from "../layouts/NoneLayout.astro"
-import SearchAndInfiniteScroll from "../components/SearchAndInfiniteScroll.svelte"
-
-const { pageTitle = "My Home" } = Astro.props
+import DefaultLayout from '../layouts/DefaultLayout.astro';
 ---
 
-<NoneLayout pageTitle={pageTitle}>
-  <div class="join">
-    <h2>Awesome Resource</h2> &nbsp;- &nbsp;<h3>CAD Fonts</h3>
+<DefaultLayout title="首页" description="欢迎访问我们的网站">
+  <div class="hero-section">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">欢迎访问</h1>
+      <p class="text-xl mb-8">这是一个使用 Astro 构建的网站</p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <button class="bg-white hover:bg-gray-100 text-purple-600 font-bold py-3 px-8 rounded-lg transition-colors theme-button">
+          开始使用
+        </button>
+        <button class="border border-white hover:border-gray-200 text-white font-bold py-3 px-8 rounded-lg transition-colors theme-button">
+          了解更多
+        </button>
+      </div>
+    </div>
   </div>
-  <SearchAndInfiniteScroll client:only="svelte" />
-  <div class="flux center">
-    <a class="logoBanner" href="https://evolution-host.com/">
-      <img
-        width="32"
-        height="32"
-        alt="Evolution Host Logo"
-        src="https://evolution-host.com/images/branding/newLogoBlack.png"
-        style="float: left;"
-      />
-      <p>
-        <span class="sizer">Evolution Host</span><br />
-        <span>Invent the Future</span>
-      </p>
-    </a>
+
+  <div class="feature-section">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">特色功能</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
+          <h3 class="text-xl font-semibold mb-4">快速开发</h3>
+          <p class="text-gray-900 dark:text-white">使用 Astro 构建的现代化网站</p>
+        </div>
+        <div class="p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
+          <h3 class="text-xl font-semibold mb-4">响应式设计</h3>
+          <p class="text-gray-900 dark:text-white">适配各种设备的布局</p>
+        </div>
+        <div class="p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
+          <h3 class="text-xl font-semibold mb-4">性能优化</h3>
+          <p class="text-gray-900 dark:text-white">快速加载和优秀性能</p>
+        </div>
+      </div>
+    </div>
   </div>
-</NoneLayout>
+</DefaultLayout>
