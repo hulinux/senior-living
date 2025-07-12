@@ -1,30 +1,250 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
+
+// Sample data for services
+const services = [
+  {
+    title: '洗衣净水器',
+    description: '为老年人提供专业、便捷的洗衣和净水设备，确保生活用水安全清洁',
+    icon: '🚿',
+    link: '/services/laundry'
+  },
+  {
+    title: '陪护助养服务',
+    description: '专业护理人员提供24小时贴心陪护，让老人享受有尊严的晚年生活',
+    icon: '👵',
+    link: '/services/care'
+  },
+  {
+    title: '养护保险服务',
+    description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
+    icon: '🛡️',
+    link: '/services/insurance'
+  }
+];
+
+// Sample success cases
+const successCases = [
+  {
+    title: '张奶奶的净水生活',
+    description: '安装净水器后，张奶奶的皮肤过敏问题得到明显改善',
+    category: '洗衣净水器'
+  },
+  {
+    title: '李爷爷的康复故事',
+    description: '专业陪护下，李爷爷术后恢复良好，生活质量显著提高',
+    category: '陪护助养服务'
+  },
+  {
+    title: '王阿姨的保险理赔',
+    description: '快速理赔服务让王阿姨的医疗费用得到及时报销',
+    category: '养护保险服务'
+  }
+];
+
+// Sample testimonials
+const testimonials = [
+  {
+    name: '张先生',
+    role: '客户家属',
+    content: '感谢你们的专业服务，让我母亲的生活质量得到了很大提升',
+    rating: 5
+  },
+  {
+    name: '李女士',
+    role: '客户',
+    content: '净水器使用方便，水质明显改善，家人都很满意',
+    rating: 5
+  },
+  {
+    name: '王先生',
+    role: '合作机构',
+    content: '与贵公司的合作非常愉快，服务专业，响应迅速',
+    rating: 4
+  }
+];
+
+// Sample news
+const news = [
+  {
+    title: '公司荣获"2025年度养老服务创新企业"称号',
+    date: '2025-06-15',
+    excerpt: '我司凭借创新的服务模式和卓越的客户体验，荣获行业权威奖项'
+  },
+  {
+    title: '新推出老年人专属保险计划',
+    date: '2025-05-28',
+    excerpt: '针对65岁以上老年人的专属保险计划，覆盖更全面，保费更优惠'
+  },
+  {
+    title: '社区健康讲座圆满结束',
+    date: '2025-05-10',
+    excerpt: '在多个社区举办的老年人健康知识讲座获得热烈反响'
+  }
+];
 ---
 
-<DefaultLayout title="首页" description="欢迎访问我们的网站">
-  <div class="hero-section full-width">
+<DefaultLayout title="首页 - 银龄生活" description="专业的老年人生活服务平台，提供洗衣净水、陪护助养、养护保险等全方位服务">
+  <!-- Hero Section -->
+  <div class="relative">
     <HeroCarousel />
-  </div>
-
-  <div class="feature-section full-width">
-    <div class="content-container">
-      <h2 class="text-3xl font-bold mb-8 text-primary">特色功能</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="feature-card p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
-          <h3 class="text-xl font-semibold mb-4 text-primary">快速开发</h3>
-          <p class="text-gray-900 dark:text-white text-secondary">使用 Astro 构建的现代化网站</p>
-        </div>
-        <div class="feature-card p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
-          <h3 class="text-xl font-semibold mb-4 text-primary">响应式设计</h3>
-          <p class="text-gray-900 dark:text-white text-secondary">适配各种设备的布局</p>
-        </div>
-        <div class="feature-card p-6 rounded-lg bg-purple-600/10 dark:bg-purple-600/20">
-          <h3 class="text-xl font-semibold mb-4 text-primary">性能优化</h3>
-          <p class="text-gray-900 dark:text-white text-secondary">快速加载和优秀性能</p>
+    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+      <div class="text-center px-4">
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">让晚年生活更美好</h1>
+        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">专业、贴心的老年人生活服务，让每一位老人都能享受幸福安康的晚年</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/contact" class="px-6 py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
+            免费咨询
+          </a>
+          <a href="/services" class="px-6 py-3 bg-white text-purple-700 rounded-md hover:bg-gray-100 transition-colors">
+            了解服务
+          </a>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Services Section -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">我们的服务</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          提供全方位的老年人生活服务解决方案，满足不同需求
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <a 
+            href={service.link}
+            class="group bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+          >
+            <div class="text-4xl mb-4 group-hover:text-purple-600 transition-colors">
+              {service.icon}
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{service.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{service.description}</p>
+            <div class="mt-4 text-purple-600 font-medium flex items-center">
+              了解更多
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Success Cases -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">成功案例</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          我们已帮助数千个家庭改善老年人生活质量
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {successCases.map((item, index) => (
+          <div 
+            key={index}
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span class="text-4xl">📷</span>
+            </div>
+            <div class="p-6">
+              <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mb-2">
+                {item.category}
+              </span>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 text-center">
+        <a href="/cases" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700">
+          查看更多案例
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">客户评价</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          听听我们的客户怎么说
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map((testimonial, index) => (
+          <div 
+            key={index}
+            class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md"
+          >
+            <div class="flex items-center mb-4">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg 
+                  key={i}
+                  class={`w-5 h-5 ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`} 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p class="text-gray-600 dark:text-gray-300 italic mb-4">"{testimonial.content}"</p>
+            <div class="flex items-center">
+              <div class="h-10 w-10 rounded-full bg-purple-100 dark:bg-purple-900 flex items-center justify-center text-purple-600 dark:text-purple-300 font-bold mr-3">
+                {testimonial.name.charAt(0)}
+              </div>
+              <div>
+                <p class="font-medium text-gray-900 dark:text-white">{testimonial.name}</p>
+                <p class="text-sm text-gray-500 dark:text-gray-400">{testimonial.role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest News -->
+  <section class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">最新动态</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          了解我们的最新动态和行业资讯
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {news.map((item, index) => (
+          <div 
+            key={index}
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+              <span class="text-4xl">📰</span>
+            </div>
+            <div class="p-6">
+              <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.date}</p>
+              <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 mb-4">{item.excerpt}</p>
+              <a href="#" class="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 font-medium">
+                阅读更多 →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
 </DefaultLayout>

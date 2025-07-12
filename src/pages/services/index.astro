@@ -1,0 +1,208 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+// Combined products and services data
+const products = [
+  {
+    title: '洗衣净水器',
+    slug: 'laundry',
+    description: '为老年人提供专业、便捷的洗衣和净水设备，确保生活用水安全清洁',
+    icon: '🚿',
+    type: 'product',
+    features: [
+      '智能控制，操作简单',
+      '高效过滤，水质更纯净',
+      '节能环保，使用寿命长',
+      '专业安装，售后无忧'
+    ],
+    image: '/images/products/laundry.jpg'
+  },
+  {
+    title: '空气净化器',
+    slug: 'air-purifier',
+    description: '高效过滤室内空气污染物，为老年人创造健康呼吸环境',
+    icon: '💨',
+    type: 'product',
+    features: [
+      '多层高效过滤系统',
+      '实时空气质量监测',
+      '静音运行，节能省电',
+      '智能APP远程控制'
+    ],
+    image: '/images/products/air-purifier.jpg'
+  },
+  {
+    title: '老年护理设备',
+    slug: 'elderly-care',
+    description: '专为老年人设计的护理辅助设备，提升生活自理能力',
+    icon: '🦽',
+    type: 'product',
+    features: [
+      '防滑安全设计',
+      '操作简便',
+      '符合人体工程学',
+      '多种型号可选'
+    ],
+    image: '/images/products/elderly-care.jpg'
+  }
+];
+
+const services = [
+  {
+    title: '专业陪护服务',
+    slug: 'care',
+    description: '专业护理人员提供24小时贴心陪护，让老人享受有尊严的晚年生活',
+    icon: '👵',
+    type: 'service',
+    features: [
+      '专业持证护理人员',
+      '24小时全天候服务',
+      '个性化护理方案',
+      '健康监测与记录'
+    ],
+    image: '/images/services/care.jpg'
+  },
+  {
+    title: '养护保险服务',
+    slug: 'insurance',
+    description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
+    icon: '🛡️',
+    type: 'service',
+    features: [
+      '专为老年人设计',
+      '全面保障，保费合理',
+      '快速理赔服务',
+      '包含医疗和意外保障'
+    ],
+    image: '/images/services/insurance.jpg'
+  },
+  {
+    title: '健康咨询服务',
+    slug: 'consulting',
+    description: '专业医疗团队提供健康咨询和用药指导',
+    icon: '💊',
+    type: 'service',
+    features: [
+      '专业医生在线问诊',
+      '用药指导',
+      '健康评估',
+      '个性化健康方案'
+    ],
+    image: '/images/services/consulting.jpg'
+  }
+];
+---
+
+<DefaultLayout title="产品与服务 - 银龄生活" description="我们提供全方位的老年人生活产品和服务，包括专业设备、陪护服务和保险方案">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <div class="text-center mb-16">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl mb-6">产品与服务</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        为老年人提供全方位的生活解决方案，从专业设备到贴心服务，我们一应俱全
+      </p>
+    </div>
+
+    <!-- Products Section -->
+    <section class="mb-20">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">产品中心</h2>
+        <a href="/products" class="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 text-sm font-medium">
+          查看全部产品 →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {products.map((product) => (
+          <a 
+            href={`/products/${product.slug}`}
+            class="group bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-6xl">
+              {product.icon}
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  {product.title}
+                </h3>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-purple-800 dark:bg-purple-800 dark:text-purple-100">
+                  产品
+                </span>
+              </div>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                {product.description}
+              </p>
+              <ul class="mt-4 space-y-2">
+                {product.features.slice(0, 3).map((feature, i) => (
+                  <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-6 text-purple-600 dark:text-purple-400 text-sm font-medium flex items-center">
+                查看详情
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="mb-20">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white">专业服务</h2>
+        <a href="/services/all" class="text-purple-600 hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 text-sm font-medium">
+          查看全部服务 →
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service) => (
+          <a 
+            href={`/services/${service.slug}`}
+            class="group bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+          >
+            <div class="h-48 bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-6xl">
+              {service.icon}
+            </div>
+            <div class="p-6">
+              <div class="flex justify-between items-start">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  {service.title}
+                </h3>
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-800 dark:text-blue-100">
+                  服务
+                </span>
+              </div>
+              <p class="mt-2 text-gray-600 dark:text-gray-300">
+                {service.description}
+              </p>
+              <ul class="mt-4 space-y-2">
+                {service.features.slice(0, 3).map((feature, i) => (
+                  <li class="flex items-center text-sm text-gray-600 dark:text-gray-400">
+                    <svg class="w-4 h-4 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-6 text-purple-600 dark:text-purple-400 text-sm font-medium flex items-center">
+                了解详情
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</DefaultLayout>

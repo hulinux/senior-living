@@ -1,0 +1,265 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+const service = {
+  title: '养护保险服务',
+  description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
+  longDescription: '我们的养护保险服务专为老年人设计，提供全面的医疗保障、意外伤害保险和长期护理保险等产品，帮助老年人和家庭应对医疗支出和护理费用，让晚年生活更有保障。',
+  features: [
+    {
+      title: '全面保障',
+      description: '覆盖医疗、意外、护理等全方位风险',
+      icon: '🛡️'
+    },
+    {
+      title: '灵活选择',
+      description: '多种保险方案，满足不同需求',
+      icon: '🔍'
+    },
+    {
+      title: '快速理赔',
+      description: '简化流程，快速赔付',
+      icon: '⚡'
+    },
+    {
+      title: '专业服务',
+      description: '专业团队提供咨询和理赔服务',
+      icon: '👨‍💼'
+    }
+  ],
+  plans: [
+    {
+      name: '基础保障计划',
+      price: '299元/月起',
+      features: [
+        '意外伤害保险',
+        '住院医疗费用报销',
+        '24小时医疗咨询',
+        '紧急救援服务',
+        '保额最高10万元'
+      ],
+      popular: false
+    },
+    {
+      name: '全面保障计划',
+      price: '599元/月起',
+      features: [
+        '基础保障计划所有内容',
+        '重大疾病保险',
+        '门诊医疗费用报销',
+        '护理费用补贴',
+        '保额最高30万元',
+        '专属健康管理服务'
+      ],
+      popular: true
+    },
+    {
+      name: '尊享保障计划',
+      price: '999元/月起',
+      features: [
+        '全面保障计划所有内容',
+        '高端医疗服务',
+        '国际二次诊疗',
+        '特需病房费用',
+        '保额最高100万元',
+        '家庭医生服务',
+        '全球紧急救援'
+      ],
+      popular: false
+    }
+  ],
+  benefits: [
+    '减轻家庭医疗费用负担',
+    '提供专业医疗资源',
+    '保障老年人生活质量',
+    '应对突发意外风险',
+    '专业团队全程服务'
+  ],
+  faqs: [
+    {
+      question: '老年人购买保险有哪些限制？',
+      answer: '不同保险产品对投保年龄有不同要求，我们提供多种适合老年人的保险产品，最高可保至85岁。'
+    },
+    {
+      question: '有既往病史可以投保吗？',
+      answer: '可以投保，但需要如实告知健康状况，部分疾病可能需要加费或做除外责任处理。'
+    },
+    {
+      question: '理赔流程复杂吗？',
+      answer: '我们提供简化的理赔流程，专业理赔顾问全程协助，确保快速高效完成理赔。'
+    }
+  ]
+};
+---
+
+<DefaultLayout title="${service.title} - 银龄生活" description="${service.description}">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Hero Section -->
+    <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2">
+        <div class="p-8 sm:p-12 lg:py-16 lg:pr-0">
+          <h1 class="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">
+            {service.title}
+          </h1>
+          <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+            {service.description}
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4">
+            <a 
+              href="/contact" 
+              class="px-6 py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors text-center font-medium"
+            >
+              免费咨询
+            </a>
+            <a 
+              href="tel:+8612345678900" 
+              class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors text-center font-medium"
+            >
+              拨打热线
+            </a>
+          </div>
+        </div>
+        <div class="h-64 lg:h-auto lg:relative">
+          <div class="h-full w-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-8xl">
+            🏥
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">服务特点</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          为老年人量身定制的保险解决方案
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {service.features.map((feature, index) => (
+          <div key={index} class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+            <p class="text-gray-600 dark:text-gray-300">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Pricing Plans -->
+    <section class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 md:p-12 mb-16">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">保险方案</h2>
+          <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            多种保障方案，满足不同需求
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {service.plans.map((plan, index) => (
+            <div class={`relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-purple-500' : ''}`}>
+              {plan.popular && (
+                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-bl-lg">
+                  热门选择
+                </div>
+              )}
+              <div class="p-6">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
+                <div class="mb-6">
+                  <span class="text-4xl font-bold text-purple-600 dark:text-purple-400">{plan.price}</span>
+                </div>
+                <ul class="space-y-3 mb-8">
+                  {plan.features.map((feature, i) => (
+                    <li class="flex items-start">
+                      <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                      </svg>
+                      <span class="text-gray-600 dark:text-gray-300">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a 
+                  href="/contact" 
+                  class={`block w-full py-3 px-4 text-center rounded-md font-medium transition-colors ${plan.popular ? 'bg-purple-600 text-white hover:bg-purple-700' : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}
+                >
+                  立即投保
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">服务优势</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          为什么选择我们的养护保险服务？
+        </p>
+      </div>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+        {service.benefits.map((benefit, index) => (
+          <div key={index} class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <p class="text-lg text-gray-700 dark:text-gray-300">{benefit}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">常见问题</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          关于{service.title}的常见问题解答
+        </p>
+      </div>
+      <div class="max-w-3xl mx-auto space-y-6">
+        {service.faqs.map((faq, index) => (
+          <div key={index} class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+            <details class="group">
+              <summary class="flex items-center justify-between p-6 cursor-pointer">
+                <h3 class="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</h3>
+                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </summary>
+              <div class="px-6 pb-6 pt-0 -mt-4 text-gray-600 dark:text-gray-300">
+                {faq.answer}
+              </div>
+            </details>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-purple-700 text-white rounded-2xl p-8 md:p-12 text-center">
+      <h2 class="text-3xl font-bold mb-4">为晚年生活添一份安心</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        现在咨询，获取专属保险方案，为健康保驾护航
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a 
+          href="/contact" 
+          class="px-6 py-3 bg-white text-purple-700 rounded-md hover:bg-gray-100 transition-colors font-medium"
+        >
+          免费咨询
+        </a>
+        <a 
+          href="tel:+8612345678900" 
+          class="px-6 py-3 border-2 border-white text-white rounded-md hover:bg-white hover:bg-opacity-10 transition-colors font-medium"
+        >
+          拨打热线
+        </a>
+      </div>
+    </section>
+  </main>
+</DefaultLayout>

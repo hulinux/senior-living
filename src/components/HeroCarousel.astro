@@ -18,16 +18,46 @@ const carouselImages = [
     alt: '老年生活服务场景3'
   }
 ];
+
+// Auto-rotation script
+const carouselScript = `
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-item');
+  const totalSlides = slides.length;
+  
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? 'block' : 'none';
+    });
+  }
+  
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+  
+  // Initialize first slide
+  showSlide(currentSlide);
+  
+  // Auto-rotate every 5 seconds
+  setInterval(nextSlide, 5000);
+`;
 ---
 
-<div class="carousel w-screen h-[300px] carousel-vertical">
+<div class="carousel w-screen h-[500px] overflow-hidden relative">
   {carouselImages.map((image, index) => (
-    <div id={`slide${index + 1}`} class="carousel-item w-screen">
+    <div 
+      id={`slide${index + 1}`} 
+      class="carousel-item w-full h-full absolute inset-0 transition-opacity duration-1000"
+      style={`display: ${index === 0 ? 'block' : 'none'};`}
+    >
       <img 
         src={image.src} 
         alt={image.alt} 
-        class="w-screen h-full object-cover"
+        class="w-full h-full object-cover object-center"
       />
     </div>
   ))}
 </div>
+
+<script>{carouselScript}</script>
