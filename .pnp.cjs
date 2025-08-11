@@ -31,6 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/rss", "npm:4.0.12"],\
           ["@astrojs/svelte", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:7.1.0"],\
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
+          ["@types/node", "npm:24.2.1"],\
           ["astro", "npm:5.10.1"],\
           ["daisyui", "npm:5.0.43"],\
           ["postcss", "npm:8.5.6"],\
@@ -1282,6 +1283,14 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["@types/node", "npm:24.0.4"],\
           ["undici-types", "npm:7.8.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:24.2.1", {\
+        "packageLocation": "../.yarn/berry/cache/@types-node-npm-24.2.1-00ab09acd1-10c0.zip/node_modules/@types/node/",\
+        "packageDependencies": [\
+          ["@types/node", "npm:24.2.1"],\
+          ["undici-types", "npm:7.10.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4725,6 +4734,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/rss", "npm:4.0.12"],\
           ["@astrojs/svelte", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:7.1.0"],\
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
+          ["@types/node", "npm:24.2.1"],\
           ["astro", "npm:5.10.1"],\
           ["daisyui", "npm:5.0.43"],\
           ["postcss", "npm:8.5.6"],\
@@ -5273,6 +5283,13 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["undici-types", [\
+      ["npm:7.10.0", {\
+        "packageLocation": "../.yarn/berry/cache/undici-types-npm-7.10.0-cd8324b9eb-10c0.zip/node_modules/undici-types/",\
+        "packageDependencies": [\
+          ["undici-types", "npm:7.10.0"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["npm:7.8.0", {\
         "packageLocation": "../.yarn/berry/cache/undici-types-npm-7.8.0-86f3e2d23e-10c0.zip/node_modules/undici-types/",\
         "packageDependencies": [\
