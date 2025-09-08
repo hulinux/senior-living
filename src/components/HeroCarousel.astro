@@ -6,10 +6,10 @@ const {} = Astro.props;
 // Sample carousel images (replace with actual image paths)
 const carouselImages = [
   {
-    src: "/images/hero1.jpg",
+    src: "/images/hero1.png",
     alt: "老年生活服务场景1",
-    title: "专业养老服务",
-    description: "提供全方位的养老生活解决方案",
+    title: "我国已进入老龄社会",
+    description: "让老年人老有所养、生活幸福、健康长寿是我们的共同愿望",
   },
   {
     src: "/images/hero2.jpg",
@@ -37,8 +37,8 @@ const carouselImages = [
             class="w-full h-full object-cover object-center"
           />
           <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-4">{image.title}</h2>
-            <p class="text-xl md:text-2xl max-w-2xl">{image.description}</p>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">{image.title}</h1>
+            <h3 class="text-xl md:text-2xl max-w-2xl">{image.description}</h3>
           </div>
         </div>
       ))
@@ -64,11 +64,11 @@ const carouselImages = [
     bottom: 0;
     width: 100%;
   }
-  .image-slideshow h2 {
+  .image-slideshow h1 {
     padding: 15px;
     margin: 0;
   }
-  .image-slideshow p {
+  .image-slideshow h3 {
     padding: 0 15px 15px 15px;
     margin: 0;
   }
