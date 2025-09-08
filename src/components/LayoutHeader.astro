@@ -75,11 +75,21 @@ const isSectionActive = (section: string) => currentPath.startsWith(section);
           </a>
         </div>
 
+        <div class="relative group">
+          <a 
+            href="/contact" 
+            class={`inline-flex items-center px-1 pt-1 text-sm font-medium ${isSectionActive('/contact') ? 'text-purple-600 dark:text-purple-400' : 'text-gray-900 dark:text-white hover:text-purple-600 dark:hover:text-purple-400'}`}
+          >
+            联系我们
+            <span class={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-600 dark:bg-purple-400 transition-all duration-200 ${isSectionActive('/contact') ? 'scale-100' : 'scale-0 group-hover:scale-100'}`}></span>
+          </a>
+        </div>
+
         <a 
-          href="/contact" 
+          href="/admin" 
           class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-purple-600 hover:bg-purple-700 transition-colors"
         >
-          联系我们
+          登录
         </a>
       </nav>
       
