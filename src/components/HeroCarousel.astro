@@ -1,63 +1,89 @@
 ---
 interface Props {}
 
-const { } = Astro.props;
+const {} = Astro.props;
 
 // Sample carousel images (replace with actual image paths)
 const carouselImages = [
   {
-    src: '/images/hero1.jpg',
-    alt: '老年生活服务场景1'
+    src: "/images/hero1.jpg",
+    alt: "老年生活服务场景1",
+    title: "专业养老服务",
+    description: "提供全方位的养老生活解决方案",
   },
   {
-    src: '/images/hero2.jpg',
-    alt: '老年生活服务场景2'
+    src: "/images/hero2.jpg",
+    alt: "老年生活服务场景2",
+    title: "舒适生活环境",
+    description: "打造安全舒适的居住环境",
   },
   {
-    src: '/images/hero3.jpg',
-    alt: '老年生活服务场景3'
-  }
+    src: "/images/hero3.jpg",
+    alt: "老年生活服务场景3",
+    title: "专业照护团队",
+    description: "24小时专业照护，让家人更放心",
+  },
 ];
-
-// Auto-rotation script
-const carouselScript = `
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.carousel-item');
-  const totalSlides = slides.length;
-  
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? 'block' : 'none';
-    });
-  }
-  
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-  }
-  
-  // Initialize first slide
-  showSlide(currentSlide);
-  
-  // Auto-rotate every 5 seconds
-  setInterval(nextSlide, 5000);
-`;
 ---
 
-<div class="carousel w-screen h-[500px] overflow-hidden relative">
-  {carouselImages.map((image, index) => (
-    <div 
-      id={`slide${index + 1}`} 
-      class="carousel-item w-full h-full absolute inset-0 transition-opacity duration-1000"
-      style={`display: ${index === 0 ? 'block' : 'none'};`}
-    >
-      <img 
-        src={image.src} 
-        alt={image.alt} 
-        class="w-full h-full object-cover object-center"
-      />
-    </div>
-  ))}
+<div class="relative w-full h-[460px]" data-carousel-wrapper>
+  <div class="carousel w-full h-full image-slideshow">
+    {
+      carouselImages.map((image, index) => (
+        <div id={`slide${index + 1}`} class="carousel-item relative w-full">
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-full object-cover object-center"
+          />
+          <div class="absolute inset-0 bg-black bg-opacity-40 flex flex-col items-center justify-center text-center text-white px-4">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">{image.title}</h2>
+            <p class="text-xl md:text-2xl max-w-2xl">{image.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </div>
 
-<script is:inline>{carouselScript}</script>
+<style>
+  .indicator {
+    opacity: 0.4;
+  }
+  .image-slideshow {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  .image-slideshow > div {
+    animation: move 15s ease-in-out 2s infinite alternate;
+    display: inline-block;
+  }
+  .image-slideshow > div div {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  .image-slideshow h2 {
+    padding: 15px;
+    margin: 0;
+  }
+  .image-slideshow p {
+    padding: 0 15px 15px 15px;
+    margin: 0;
+  }
+  @keyframes move {
+    0%,
+    30% {
+      transform: translateX(0%);
+    }
+    36%,
+    66% {
+      transform: translateX(-100%);
+    }
+    72%,
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+</style>

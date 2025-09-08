@@ -33,7 +33,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
           ["@types/node", "npm:24.2.1"],\
           ["astro", "npm:5.10.1"],\
-          ["daisyui", "npm:5.0.43"],\
+          ["daisyui", "npm:5.1.7"],\
           ["postcss", "npm:8.5.6"],\
           ["senior-living", "workspace:."],\
           ["svelte", "npm:5.34.8"],\
@@ -1963,10 +1963,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["daisyui", [\
-      ["npm:5.0.43", {\
-        "packageLocation": "../.yarn/berry/cache/daisyui-npm-5.0.43-98d0177213-10c0.zip/node_modules/daisyui/",\
+      ["npm:5.1.7", {\
+        "packageLocation": "../.yarn/berry/cache/daisyui-npm-5.1.7-6f9911c3ba-10c0.zip/node_modules/daisyui/",\
         "packageDependencies": [\
-          ["daisyui", "npm:5.0.43"]\
+          ["daisyui", "npm:5.1.7"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4736,7 +4736,7 @@ const RAW_RUNTIME_STATE =
           ["@astrojs/tailwind", "virtual:10e7e6133d756f8bc45c6ac3c601d1a6b294610ba8eb526f0a4fb8a03ebea19f8388b133a1b94ed37f2fd3483adb573257e7eb5392881c58006e8d49c3c68294#npm:6.0.2"],\
           ["@types/node", "npm:24.2.1"],\
           ["astro", "npm:5.10.1"],\
-          ["daisyui", "npm:5.0.43"],\
+          ["daisyui", "npm:5.1.7"],\
           ["postcss", "npm:8.5.6"],\
           ["senior-living", "workspace:."],\
           ["svelte", "npm:5.34.8"],\
