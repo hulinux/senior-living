@@ -6,14 +6,17 @@ const description = '了解我们的使命、愿景和团队，探索我们如�
 ---
 
 <DefaultLayout title={title} description={description}>
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="text-center mb-12">
-      <h1 class="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">关于我们</h1>
-      <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+  <!-- Hero Section with Background Image -->
+  <div class="relative bg-cover bg-center py-24 sm:py-32" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/banner_title_bg.jpg')">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white sm:text-5xl">关于我们</h1>
+      <p class="mt-4 text-xl text-gray-200 max-w-2xl mx-auto">
         我们致力于为老年人提供高品质的生活服务，让每一位老年人都能享受到舒适、便捷、有尊严的生活。
       </p>
     </div>
+  </div>
 
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-16 relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       <!-- Mission Section -->
       <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
@@ -43,9 +46,19 @@ const description = '了解我们的使命、愿景和团队，探索我们如�
       </div>
     </div>
 
+    <!-- Company Introduction Section -->
+    <div class="mt-16">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">公司简介</h2>
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
+          公司自2021年成立以来，携手各地分支机构，以“公司 + 助养师 + 社卫中心”为服务模式，以“医养融合 + 居家护佑 + 全周期照护”为服务核心，以“北京总公司 + 各省子公司 +【俊俊人家】科技服务平台”为服务体系，以“政府满意 + 客户点赞 + 员工自豪”为发展动力，积极践行“一言九鼎、模式领先、安泰如山、行稳致远”的责任与使命。我们以“孝心、真心、耐心”为根本，致力实现“长者舒心、家人安心、社会放心”，努力打造鼎泰养老——“我想拥有'心'”的居家养老模式。
+        </p>
+      </div>
+    </div>
+
     <!-- Team Section -->
     <div class="mt-16">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">团队</h2>
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">团队</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- Team Member Cards -->
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6">
@@ -94,7 +107,7 @@ const description = '了解我们的使命、愿景和团队，探索我们如�
           <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-4">联系方式</h3>
           <p class="text-gray-600 dark:text-gray-300">
             电话：400-669-2119<br>
-            邮箱：contact@example.com
+            邮箱：info@dtylfw.com
           </p>
         </div>
       </div>

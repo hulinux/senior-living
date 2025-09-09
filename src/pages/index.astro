@@ -5,19 +5,19 @@ import HeroCarousel from '../components/HeroCarousel.astro';
 // Sample data for services
 const services = [
   {
-    title: '洗衣净水器',
+    title: '净衣宝',
     description: '为老年人提供专业、便捷的洗衣和净水设备，确保生活用水安全清洁',
     icon: '🚿',
     link: '/services/laundry'
   },
   {
-    title: '陪护助养服务',
+    title: '居家康养服务',
     description: '专业护理人员提供24小时贴心陪护，让老人享受有尊严的晚年生活',
     icon: '👵',
     link: '/services/care'
   },
   {
-    title: '养护保险服务',
+    title: '康复无忧',
     description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
     icon: '🛡️',
     link: '/services/insurance'
@@ -29,17 +29,17 @@ const successCases = [
   {
     title: '张奶奶的净水生活',
     description: '安装净水器后，张奶奶的皮肤过敏问题得到明显改善',
-    category: '洗衣净水器'
+    category: '净衣宝'
   },
   {
     title: '李爷爷的康复故事',
     description: '专业陪护下，李爷爷术后恢复良好，生活质量显著提高',
-    category: '陪护助养服务'
+    category: '居家康养服务'
   },
   {
     title: '王阿姨的保险理赔',
     description: '快速理赔服务让王阿姨的医疗费用得到及时报销',
-    category: '养护保险服务'
+    category: '康复无忧'
   }
 ];
 
@@ -85,7 +85,7 @@ const news = [
 ];
 ---
 
-<DefaultLayout title="首页 - 银龄生活" description="专业的老年人生活服务平台，提供洗衣净水、陪护助养、养护保险等全方位服务">
+<DefaultLayout title="首页 - 银龄生活" description="专业的老年人生活服务平台，提供洗衣净水、居家康养、康复无忧等全方位服务">
   <!-- Hero Section -->
   <div class="relative">
     <HeroCarousel />
