@@ -29,17 +29,20 @@ const successCases = [
   {
     title: '张奶奶的净水生活',
     description: '安装净水器后，张奶奶的皮肤过敏问题得到明显改善',
-    category: '净衣宝'
+    category: '净衣宝',
+    image: '/images/zhangnainai.png'
   },
   {
     title: '李爷爷的康复故事',
     description: '专业陪护下，李爷爷术后恢复良好，生活质量显著提高',
-    category: '居家康养服务'
+    category: '居家康养服务',
+    image: '/images/liyeye.png'
   },
   {
     title: '王阿姨的保险理赔',
     description: '快速理赔服务让王阿姨的医疗费用得到及时报销',
-    category: '孝行天下 康复无忧'
+    category: '孝行天下 康复无忧',
+    image: '/images/wangayi.png'
   }
 ];
 
@@ -153,7 +156,11 @@ const news = [
             class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
             <div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-              <span class="text-4xl">📷</span>
+              {item.image ? (
+                <img src={item.image} alt={item.title} class="h-full w-full object-cover" />
+              ) : (
+                <span class="text-4xl">📷</span>
+              )}
             </div>
             <div class="p-6">
               <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mb-2">
