@@ -2,97 +2,55 @@
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
 
 const service = {
-  title: '康复无忧',
-  description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
+  title: '孝行天下 康复无忧',
+  description: '“孝行天下， 长者意外伤害康复无忧”599养老公益行动',
   longDescription: '我们的康复无忧服务专为老年人设计，提供全面的医疗保障、意外伤害保险和长期护理保险等产品，帮助老年人和家庭应对医疗支出和护理费用，让晚年生活更有保障。',
   features: [
     {
-      title: '全面保障',
-      description: '覆盖医疗、意外、护理等全方位风险',
-      icon: '🛡️'
+      title: '就医接送',
+      description: '每年2次为限，单向距离不超过50km。',
+      icon: '🚑'
     },
     {
-      title: '灵活选择',
-      description: '多种保险方案，满足不同需求',
-      icon: '🔍'
+      title: '就医陪诊',
+      description: '每年2次为限，每次以4小时为限。',
+      icon: '🧑‍⚕️'
     },
     {
-      title: '快速理赔',
-      description: '简化流程，快速赔付',
-      icon: '⚡'
+      title: '住院护理',
+      description: '每年2次为限，每次护理时间以10天为限。',
+      icon: '🏥'
     },
     {
-      title: '专业服务',
-      description: '专业团队提供咨询和理赔服务',
-      icon: '👨‍💼'
-    }
-  ],
-  plans: [
-    {
-      name: '基础保障计划',
-      price: '299元/月起',
-      features: [
-        '意外伤害保险',
-        '住院医疗费用报销',
-        '24小时医疗咨询',
-        '紧急救援服务',
-        '保额最高10万元'
-      ],
-      popular: false
+      title: '康复协助',
+      description: '每年以2次为限，每次以1个月为限。轮椅服务：每年以2次为限，每次以2个月为限',
+      icon: '🦽'
     },
     {
-      name: '全面保障计划',
-      price: '599元/月起',
-      features: [
-        '基础保障计划所有内容',
-        '重大疾病保险',
-        '门诊医疗费用报销',
-        '护理费用补贴',
-        '保额最高30万元',
-        '专属健康管理服务'
-      ],
-      popular: true
+      title: '家庭护佑',
+      description: '每年以2次为限，每次以2个月为限。',
+      icon: '🏡'
     },
     {
-      name: '尊享保障计划',
-      price: '999元/月起',
-      features: [
-        '全面保障计划所有内容',
-        '高端医疗服务',
-        '国际二次诊疗',
-        '特需病房费用',
-        '保额最高100万元',
-        '家庭医生服务',
-        '全球紧急救援'
-      ],
-      popular: false
-    }
-  ],
-  benefits: [
-    '减轻家庭医疗费用负担',
-    '提供专业医疗资源',
-    '保障老年人生活质量',
-    '应对突发意外风险',
-    '专业团队全程服务'
-  ],
-  faqs: [
-    {
-      question: '老年人购买保险有哪些限制？',
-      answer: '不同保险产品对投保年龄有不同要求，我们提供多种适合老年人的保险产品，最高可保至85岁。'
+      title: '自费医疗',
+      description: '每年以5万为限。',
+      icon: '💰'
     },
     {
-      question: '有既往病史可以投保吗？',
-      answer: '可以投保，但需要如实告知健康状况，部分疾病可能需要加费或做除外责任处理。'
+      title: '意外补偿',
+      description: '意外身故补偿金为25万元，伤疾补偿金按伤残比例计算支付。',
+      icon: '❤️‍🩹'
     },
     {
-      question: '理赔流程复杂吗？',
-      answer: '我们提供简化的理赔流程，专业理赔顾问全程协助，确保快速高效完成理赔。'
+      title: '咨询关爱',
+      description: '重要节日关爱及康复无忧咨询服务。',
+      icon: '📞'
     }
   ]
 };
 ---
 
-<DefaultLayout title="${service.title} - 银龄生活" description="${service.description}">
+<DefaultLayout title={service.title + ' - 银龄生活'} description={service.description}>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Hero Section -->
     <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl mb-16">
@@ -120,19 +78,20 @@ const service = {
           </div>
         </div>
         <div class="h-64 lg:h-auto lg:relative">
-          <div class="h-full w-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-8xl">
-            🏥
-          </div>
+          <img src="/images/happy-family1.png" alt="Happy Family" class="h-full w-full object-contain">
         </div>
       </div>
     </div>
 
     <!-- Features Section -->
     <section class="mb-16">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">服务特点</h2>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          为老年人量身定制的保险解决方案
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">内容详情</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 text-left indent-8 leading-loose">
+          在民政部的指导下，中国老年事业发展基金会、养老示范项目推进办公室、中民养老规划院联合养老、保险、医疗、健康管理等机构，在全国开展“孝行天下， 长者意外伤害康复无忧”599养老公益行动。
+        </p>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 text-left indent-8 leading-loose">
+          长者发生意外伤害事故后，康复无忧养老公益行动实现免费就医老人接送、门诊陪诊、院内住院护理、康复助行器和轮椅配置、上门照护、意外身故和残疾补助、意外伤害医疗费用分担、节日关怀、免费咨询等全过程形成完整服务链闭环。同时，适时为受益人创新服务项目。经过2至3年时间，实现老年人享受公益行动服务的受益人比例超过20%，人数超过1000万人。
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -146,47 +105,61 @@ const service = {
       </div>
     </section>
 
-    <!-- Pricing Plans -->
-    <section class="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-2xl p-8 md:p-12 mb-16">
-      <div class="max-w-6xl mx-auto">
+    <!-- Donation Section -->
+    <section class="bg-white dark:bg-gray-800 rounded-2xl p-8 md:p-12 mb-16 shadow-lg">
+      <div class="max-w-4xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">保险方案</h2>
-          <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            多种保障方案，满足不同需求
-          </p>
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">捐赠方案与褒奖</h2>
+          <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">您的每一份支持，都是对长者晚年生活的温暖守护。</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {service.plans.map((plan, index) => (
-            <div class={`relative bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden ${plan.popular ? 'ring-2 ring-purple-500' : ''}`}>
-              {plan.popular && (
-                <div class="absolute top-0 right-0 bg-purple-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-bl-lg">
-                  热门选择
-                </div>
-              )}
-              <div class="p-6">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{plan.name}</h3>
-                <div class="mb-6">
-                  <span class="text-4xl font-bold text-purple-600 dark:text-purple-400">{plan.price}</span>
-                </div>
-                <ul class="space-y-3 mb-8">
-                  {plan.features.map((feature, i) => (
-                    <li class="flex items-start">
-                      <svg class="w-5 h-5 text-green-500 mr-2 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      <span class="text-gray-600 dark:text-gray-300">{feature}</span>
-                    </li>
-                  ))}
+
+        <div class="space-y-10">
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4 border-b-2 border-purple-300 dark:border-purple-700 pb-2">权益与捐赠</h3>
+            <div class="space-y-4 text-lg text-gray-700 dark:text-gray-300">
+              <p><strong class="font-semibold">（一）权益期间：</strong>1年。</p>
+              <div>
+                <p><strong class="font-semibold">（二）捐赠安排：</strong></p>
+                <p class="mt-2 leading-relaxed">捐赠人可以采用日、月、年等捐赠方式，具体捐赠金额分别为：</p>
+                <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                  <li><span class="font-medium">年度捐赠：</span>一次性捐赠599元</li>
+                  <li><span class="font-medium">每月捐赠：</span>每月捐赠50元</li>
+                  <li><span class="font-medium">每日捐赠：</span>每日捐赠2元</li>
                 </ul>
-                <a 
-                  href="/contact" 
-                  class={`block w-full py-3 px-4 text-center rounded-md font-medium transition-colors ${plan.popular ? 'bg-purple-600 text-white hover:bg-purple-700' : 'bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600'}`}
-                >
-                  立即投保
-                </a>
               </div>
             </div>
-          ))}
+          </div>
+
+          <div>
+            <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4 border-b-2 border-purple-300 dark:border-purple-700 pb-2">捐赠人褒奖</h3>
+            <p class="mb-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">捐赠人将获得以下褒奖：</p>
+            <div class="space-y-6">
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（一）授予荣誉称号</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">由民政部或中国老年事业发展基金会等单位颁发“孝行天下之星”、“孝行天下捐赠先进个人”、“孝行天下捐赠先进单位”、“孝行天下行动楷模”、“孝行天下养老服务示范项目”等荣誉证书，在国家级新闻媒体或平台上进行公示和答谢。</p>
+              </div>
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（二）公开表彰与宣传</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">通过政府或公益组织发布荣誉榜单，公开宣传捐赠人贡献事迹，增强社会认可度。</p>
+              </div>
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（三）税收优惠政策</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">个人捐赠、企业捐赠按照国家相关规定可以享受税收优惠。</p>
+              </div>
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（四）专属权益与服务</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">根据捐赠额度提供差异化权益，参加公益活动过程、优先供应专属产品或项目参与权，提升捐赠人归属感和服务优先权益。捐赠人参加本行动服务项目投标时，可根据捐赠情况增计1至3分，记入评标总评价。</p>
+              </div>
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（五）项目透明度与互动</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">公开资金使用详情，定期向捐赠者反馈项目进展，并通过沟通会等形式增强其参与广度和深度。</p>
+              </div>
+              <div class="p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg">
+                <h4 class="font-semibold text-xl text-purple-700 dark:text-purple-400">（六）法律保障与政策支持</h4>
+                <p class="mt-2 text-gray-600 dark:text-gray-300 leading-relaxed">《公益事业捐赠法》明确捐赠财产受法律保护，禁止挪用，并对突出贡献者予以政府表彰。2023年修订的《慈善法》进一步强化了慈善组织的规范管理和捐赠权益保障。</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -194,22 +167,36 @@ const service = {
     <!-- Benefits Section -->
     <section class="mb-16">
       <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">服务优势</h2>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          为什么选择我们的康复无忧服务？
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white">公益价值</h2>
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          您的参与将为长者安享晚年贡献重要力量
         </p>
       </div>
       <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-        {service.benefits.map((benefit, index) => (
-          <div key={index} class="flex items-start">
-            <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-            </div>
-            <p class="text-lg text-gray-700 dark:text-gray-300">{benefit}</p>
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
           </div>
-        ))}
+          <p class="text-lg text-gray-700 dark:text-gray-300">汇聚爱心，守护长者</p>
+        </div>
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <p class="text-lg text-gray-700 dark:text-gray-300">提升长者意外应对能力</p>
+        </div>
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <p class="text-lg text-gray-700 dark:text-gray-300">促进社会孝亲敬老风尚</p>
+        </div>
+        <div class="flex items-start">
+          <div class="flex-shrink-0 h-6 w-6 text-purple-600 dark:text-purple-400 mr-3 mt-1">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+          </div>
+          <p class="text-lg text-gray-700 dark:text-gray-300">公开透明，善款善用</p>
+        </div>
       </div>
     </section>
 
@@ -217,41 +204,59 @@ const service = {
     <section class="mb-16">
       <div class="text-center mb-12">
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white">常见问题</h2>
-        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          关于{service.title}的常见问题解答
+        <p class="mt-4 text-xl text-gray-600 dark:text-gray-300">
+          关于“孝行天下 康复无忧”公益行动的常见问题解答
         </p>
       </div>
       <div class="max-w-3xl mx-auto space-y-6">
-        {service.faqs.map((faq, index) => (
-          <div key={index} class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-            <details class="group">
-              <summary class="flex items-center justify-between p-6 cursor-pointer">
-                <h3 class="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</h3>
-                <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </summary>
-              <div class="px-6 pb-6 pt-0 -mt-4 text-gray-600 dark:text-gray-300">
-                {faq.answer}
-              </div>
-            </details>
-          </div>
-        ))}
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">捐赠的资金将如何使用？</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 pt-0 -mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              所有捐赠资金将专项用于“孝行天下，长者意外伤害康复无忧”公益行动，包括为长者提供就医接送、住院护理、康复助行器和轮椅配置、上门照护、意外身故和残疾补助、意外伤害医疗费用分担、节日关怀、免费咨询等全过程形成完整服务链闭环。资金使用情况将定期公示，确保公开透明。
+            </div>
+          </details>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">我如何知道我的捐赠帮助了谁？</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 pt-0 -mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              我们会通过官方平台定期发布项目进展报告和受益长者的故事分享（在征得当事人同意的前提下），让每一位捐赠人都能看到善款带来的积极改变。
+            </div>
+          </details>
+        </div>
+        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
+          <details class="group">
+            <summary class="flex items-center justify-between p-6 cursor-pointer">
+              <h3 class="text-lg font-medium text-gray-900 dark:text-white">捐赠后可以获得收据或证书吗？</h3>
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+            </summary>
+            <div class="px-6 pb-6 pt-0 -mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
+              是的，所有捐赠均可申请开具由中国老年事业发展基金会提供的公益事业捐赠专用收据，作为税前扣除凭证。同时，我们也会为捐赠人颁发相应的荣誉证书以示感谢。
+            </div>
+          </details>
+        </div>
       </div>
     </section>
 
     <!-- CTA Section -->
     <section class="bg-purple-700 text-white rounded-2xl p-8 md:p-12 text-center">
-      <h2 class="text-3xl font-bold mb-4">为晚年生活添一份安心</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">
-        现在咨询，获取专属保险方案，为健康保驾护航
+      <h2 class="text-3xl font-bold mb-4">加入我们，传递温暖</h2>
+      <p class="text-xl mb-8">
+        立即行动，为长者的晚年生活增添一份安心与守护
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="/contact" 
           class="px-6 py-3 bg-white text-purple-700 rounded-md hover:bg-gray-100 transition-colors font-medium"
         >
-          免费咨询
+          参与捐赠
         </a>
         <a 
           href="tel:+400-669-2119" 
