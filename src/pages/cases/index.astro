@@ -18,42 +18,46 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro';
           title: "张爷爷的居家养老方案",
           description: "通过智能设备和专业护理服务，让90岁高龄的张爷爷能够安全舒适地在家养老",
           category: "居家养老",
-          image: "/images/cases/zhang-yeye.jpg"
+          image: "/images/cases/zhang-yeye.png"
         },
         {
           title: "李奶奶的术后康复",
           description: "专业康复团队帮助李奶奶在髋关节置换手术后快速恢复行动能力",
           category: "康复护理",
-          image: "/images/cases/li-nainai.jpg"
+          image: "/images/cases/li-nainai.png"
         },
         {
           title: "王叔叔的慢病管理",
           description: "个性化慢病管理方案，帮助患有糖尿病的王叔叔控制血糖，提高生活质量",
           category: "健康管理",
-          image: "/images/cases/wang-shushu.jpg"
+          image: "/images/cases/wang-shushu.png"
         },
         {
           title: "阳光养老院智能化改造",
           description: "为阳光养老院提供全面的智能化改造方案，提升管理效率和服务质量",
           category: "机构合作",
-          image: "/images/cases/yangguang.jpg"
+          image: "/images/cases/yangguang.png"
         },
         {
           title: "社区老年活动中心",
           description: "打造多功能社区老年活动中心，丰富老年人精神文化生活",
           category: "社区服务",
-          image: "/images/cases/community.jpg"
+          image: "/images/cases/community.png"
         },
         {
           title: "家庭适老化改造",
           description: "为多户家庭提供专业的适老化改造方案，预防老人跌倒等意外发生",
           category: "适老化改造",
-          image: "/images/cases/renovation.jpg"
+          image: "/images/cases/renovation.png"
         }
       ].map((caseStudy, index) => (
         <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-          <div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-            <span class="text-4xl">📷</span>
+          <div class="h-48 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+            <img 
+              src={caseStudy.image} 
+              alt={caseStudy.title}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
           </div>
           <div class="p-6">
             <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full mb-2">
