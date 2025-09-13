@@ -69,7 +69,7 @@ const service = {
 };
 ---
 
-<DefaultLayout title="${service.title} - 银龄生活" description="${service.description}">
+<DefaultLayout title={service.title + ' - 银龄生活'} description={service.description}>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Hero Section -->
     <div class="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-xl mb-16">
@@ -97,9 +97,11 @@ const service = {
           </div>
         </div>
         <div class="h-64 lg:h-auto lg:relative">
-          <div class="h-full w-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-8xl">
-            👵
-          </div>
+          <img 
+            src="/images/old_care.png" 
+            alt="Elderly care service" 
+            class="h-full w-full object-cover"
+          />
         </div>
       </div>
     </div>
@@ -199,7 +201,7 @@ const service = {
     </section>
 
     <!-- CTA Section -->
-    <section class="bg-purple-700 text-white rounded-2xl p-8 md:p-12 text-center">
+    <section class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-8 md:p-12 text-center">
       <h2 class="text-3xl font-bold mb-4">为您的家人提供专业照护</h2>
       <p class="text-xl mb-8 max-w-2xl mx-auto">
         现在预约咨询，为老人选择最合适的居家康养方案
@@ -207,13 +209,13 @@ const service = {
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a 
           href="/contact" 
-          class="px-6 py-3 bg-white text-purple-700 rounded-md hover:bg-gray-100 transition-colors font-medium"
+          class="px-8 py-3 bg-white text-purple-600 rounded-md hover:bg-gray-100 transition-colors font-medium"
         >
           免费咨询
         </a>
         <a 
           href="tel:+400-669-2119" 
-          class="px-6 py-3 border-2 border-white text-white rounded-md hover:bg-white hover:bg-opacity-10 transition-colors font-medium"
+          class="px-8 py-3 border-2 border-white text-white rounded-md hover:bg-white hover:bg-opacity-10 transition-colors font-medium"
         >
           拨打热线
         </a>
