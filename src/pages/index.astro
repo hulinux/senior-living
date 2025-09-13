@@ -7,19 +7,19 @@ const services = [
   {
     title: '净衣宝',
     description: '为老年人提供专业、便捷的洗衣和净水设备，确保生活用水安全清洁',
-    icon: '🚿',
-    link: '/services/laundry'
+    bgImage: '/images/jingyibao.png',
+    link: '/products/laundry'
   },
   {
     title: '居家康养服务',
     description: '专业护理人员提供24小时贴心陪护，让老人享受有尊严的晚年生活',
-    icon: '👵',
+    bgImage: '/images/old_career.png',
     link: '/services/care'
   },
   {
     title: '孝行天下 康复无忧',
-    description: '全面的养护保险计划，为老年人的健康和生活质量提供保障',
-    icon: '🛡️',
+    description: '为老年人提供全方位的健康管理和康复服务',
+    bgImage: '/images/hands_hear.png',
     link: '/services/insurance'
   }
 ];
@@ -121,18 +121,24 @@ const news = [
         {services.map((service) => (
           <a 
             href={service.link}
-            class="group bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
+            class="group relative bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden flex"
           >
-            <div class="text-4xl mb-4 group-hover:text-purple-600 transition-colors">
-              {service.icon}
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">{service.title}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{service.description}</p>
-            <div class="mt-4 text-purple-600 font-medium flex items-center">
-              了解更多
-              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-              </svg>
+            {service.bgImage ? (
+              <div class="w-1/2 bg-cover bg-center" style={`background-image: url(${service.bgImage})`}></div>
+            ) : (
+              <div class="w-1/2 flex items-center justify-center text-6xl group-hover:text-purple-600 transition-colors">
+                {service.icon}
+              </div>
+            )}
+            <div class="w-1/2 p-6 flex flex-col">
+              <h3 class="text-xl font-semibold mb-2 text-gray-900 dark:text-white">{service.title}</h3>
+              <p class="text-gray-600 dark:text-gray-300 flex-grow">{service.description}</p>
+              <div class="mt-4 text-purple-600 font-medium flex items-center">
+                了解更多
+                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </div>
             </div>
           </a>
         ))}

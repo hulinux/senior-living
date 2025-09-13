@@ -1,185 +1,261 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro';
+
+const service = {
+  title: '净衣宝',
+  description: '采用先进ESM技术的专业净水洗衣解决方案，为老年人提供更健康、更环保的洗涤体验',
+  longDescription: '净衣宝采用创新的ESM(Electronic Sterilizing Module)技术，通过特殊材质产生具有强效杀菌能力的离子水，无需电力、无需添加任何化学洗涤剂即可实现深层清洁和杀菌效果。特别适合老年人敏感肌肤，有效减少化学物质残留，让衣物更安全、更健康。',
+  features: [
+    {
+      title: 'ESM技术',
+      description: '特殊材质产生杀菌离子，无需电力，无需添加化学洗涤剂',
+      icon: '⚡'
+    },
+    {
+      title: '深层清洁',
+      description: '强效去除污渍和异味，保持衣物清新',
+      icon: '✨'
+    },
+    {
+      title: '环保健康',
+      description: '零耗电，零化学添加，保护皮肤健康',
+      icon: '🌱'
+    },
+    {
+      title: '经济实惠',
+      description: '一次安装，长期使用，无需耗材',
+      icon: '💰'
+    }
+  ],
+  productDetails: {
+    model: 'ESM-2023',
+    material: '特殊合金+环保材料',
+    capacity: '适合所有类型洗衣机',
+    installation: '简单安装，无需专业工具',
+    maintenance: '无需电力，无需更换滤芯',
+    certification: 'KC, CE, RoHS认证'
+  },
+  serviceItems: [
+    {
+      title: '产品特点',
+      items: [
+        '99.9%杀菌率',
+        '去除农药残留',
+        '减少皮肤过敏',
+        '延长衣物寿命'
+      ]
+    },
+    {
+      title: '适用场景',
+      items: [
+        '家用洗衣机',
+        '养老机构',
+        '医院',
+        '酒店'
+      ]
+    },
+    {
+      title: '安装维护',
+      items: [
+        '简单安装',
+        '自动清洁',
+        '无需电力',
+        '长期使用'
+      ]
+    },
+    {
+      title: '客户服务',
+      items: [
+        '专业咨询',
+        '上门安装',
+        '使用指导',
+        '售后保障'
+      ]
+    }
+  ],
+  benefits: [
+    '100%无需电力，安全可靠',
+    '零化学添加，保护敏感肌肤',
+    '有效去除99.9%的细菌和病毒',
+    '环保节能，减少水污染',
+    '延长衣物使用寿命，节省开支'
+  ],
+  faqs: [
+    {
+      question: '净衣宝需要用电吗？',
+      answer: '不需要，净衣宝采用特殊材质技术，完全不需要电力即可工作，更加安全可靠。'
+    },
+    {
+      question: '安装复杂吗？',
+      answer: '安装非常简单，只需将净衣宝连接到洗衣机的进水管即可，无需专业工具，5分钟即可完成安装。'
+    },
+    {
+      question: '需要定期更换滤芯吗？',
+      answer: '不需要，净衣宝采用特殊材质技术，无需更换滤芯，一次安装，长期使用。'
+    },
+    {
+      question: '对水质有要求吗？',
+      answer: '净衣宝适用于各种水质，无论是硬水还是软水地区都能发挥出色的清洁和杀菌效果。'
+    }
+  ]
+};
 ---
 
-<DefaultLayout title="净衣宝 - 鼎泰养老服务" description="专业为老年人设计的净衣宝设备，确保生活用水安全清洁">
-  <div class="pt-24 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Product Hero -->
-    <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden mb-12">
-      <div class="grid grid-cols-1 lg:grid-cols-2">
-        <div class="p-8 sm:p-12">
-          <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 mb-4">
-            明星产品
-          </div>
-          <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-6">智能净衣宝</h1>
-          <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-            专为老年人设计的智能净衣宝设备，集洗衣、净水于一体，操作简单，安全可靠，让您的生活用水更健康。
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="#contact" class="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-center font-medium">
-              立即咨询
-            </a>
-            <a href="#features" class="px-6 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 text-center font-medium">
-              查看详情
-            </a>
-          </div>
-        </div>
-        <div class="h-80 lg:h-auto bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-          <span class="text-6xl">🚿</span>
-        </div>
-      </div>
-    </div>
+<DefaultLayout title={`${service.title} - 银龄生活`} description={service.description}>
+  <!-- Banner Section -->
+  <div class="w-full" style="height: 40vh; min-height: 400px; overflow: hidden;">
+    <img 
+      src="http://www.ariumesm.com/img/main_slide01.png" 
+      alt="净衣宝" 
+      class="w-full h-full object-cover"
+    />
+  </div>
 
-    <!-- Features -->
-    <div id="features" class="mb-20">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">产品特点</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          智能、安全、便捷的洗衣净水解决方案
-        </p>
-      </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[
-          {
-            title: "智能控制",
-            description: "一键操作，老人也能轻松使用，支持远程控制和语音助手",
-            icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-          },
-          {
-            title: "高效净水",
-            description: "五重过滤系统，有效去除水中杂质和有害物质，保障用水安全",
-            icon: "M3 15a4 4 0 004 4h9a5 5 0 10-.1-.9"
-          },
-          {
-            title: "节能环保",
-            description: "低能耗设计，比传统洗衣机节水30%，省电20%",
-            icon: "M13 10V3L4 14h7v7l9-11h-7z"
-          },
-          {
-            title: "静音运行",
-            description: "超静音设计，夜间洗衣不扰民",
-            icon: "M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
-          },
-          {
-            title: "大容量设计",
-            description: "8公斤大容量，满足全家洗衣需求",
-            icon: "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-          },
-          {
-            title: "智能自清洁",
-            description: "自动清洁内筒，防止细菌滋生，保持洗衣环境清洁",
-            icon: "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
-          }
-        ].map((feature, index) => (
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
-            <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-full flex items-center justify-center mb-4">
-              <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={feature.icon} />
-              </svg>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
-            <p class="text-gray-600 dark:text-gray-300">{feature.description}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Specifications -->
-    <div class="mb-20">
-      <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg overflow-hidden">
-        <div class="px-6 py-8 sm:p-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">技术参数</h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { name: "产品型号", value: "DT-WM001" },
-              { name: "额定电压", value: "220V~50Hz" },
-              { name: "额定功率", value: "1200W" },
-              { name: "洗涤容量", value: "8kg" },
-              { name: "外形尺寸", value: "600×600×850mm" },
-              { name: "净重", value: "65kg" },
-              { name: "水温调节", value: "30°C-90°C" },
-              { name: "洗涤程序", value: "12种" },
-              { name: "能效等级", value: "1级" }
-            ].map((spec, index) => (
-              <div>
-                <dt class="text-sm font-medium text-gray-500 dark:text-gray-400">{spec.name}</dt>
-                <dd class="mt-1 text-lg font-semibold text-gray-900 dark:text-white">{spec.value}</dd>
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 -mt-4 relative z-10">
+    <!-- Product Intro -->
+    <section class="mb-16 bg-white rounded-2xl p-8 shadow-md">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">产品介绍</h2>
+      <p class="text-gray-600 mb-6">
+        {service.longDescription}
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">产品参数</h3>
+          <ul class="space-y-3">
+            <li class="flex justify-between">
+              <span class="text-gray-600">产品型号</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.model}</span>
+            </li>
+            <li class="flex justify-between">
+              <span class="text-gray-600">产品材质</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.material}</span>
+            </li>
+            <li class="flex justify-between">
+              <span class="text-gray-600">适用容量</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.capacity}</span>
+            </li>
+            <li class="flex justify-between">
+              <span class="text-gray-600">安装方式</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.installation}</span>
+            </li>
+            <li class="flex justify-between">
+              <span class="text-gray-600">维护需求</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.maintenance}</span>
+            </li>
+            <li class="flex justify-between">
+              <span class="text-gray-600">认证信息</span>
+              <span class="text-gray-900 font-medium">{service.productDetails.certification}</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">产品特点</h3>
+          <div class="grid grid-cols-2 gap-4">
+            {service.features.map((feature) => (
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <div class="text-3xl mb-2">{feature.icon}</div>
+                <h4 class="font-medium text-gray-900">{feature.title}</h4>
+                <p class="text-sm text-gray-600">{feature.description}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- CTA Section -->
-    <div id="contact" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 text-center mb-12">
-      <h2 class="text-3xl font-bold mb-4">立即获取产品详情</h2>
-      <p class="text-xl mb-8 max-w-2xl mx-auto">
-        填写下方表单，我们的专业顾问将尽快与您联系，为您提供详细的产品信息和报价
-      </p>
-      <form class="max-w-2xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div>
-            <label for="name" class="sr-only">姓名</label>
-            <input type="text" id="name" name="name" placeholder="您的姓名" required
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600">
-          </div>
-          <div>
-            <label for="phone" class="sr-only">电话</label>
-            <input type="tel" id="phone" name="phone" placeholder="联系电话" required
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600">
-          </div>
+    <!-- Service Details -->
+    <section class="mb-16">
+      <div class="bg-white rounded-2xl p-8 shadow-md">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">服务内容</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {service.serviceItems.map((item) => (
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="text-lg font-semibold text-gray-900 mb-4">{item.title}</h3>
+              <ul class="space-y-2">
+                {item.items.map((subItem) => (
+                  <li class="flex items-center text-gray-600">
+                    <span class="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                    {subItem}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div class="mb-6">
-          <label for="message" class="sr-only">留言内容</label>
-          <textarea id="message" name="message" rows="3" placeholder="请描述您的需求" required
-            class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 placeholder-white/70 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600"></textarea>
-        </div>
-        <button type="submit" 
-          class="w-full md:w-auto px-8 py-3 border border-transparent text-base font-medium rounded-md text-purple-700 bg-white hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white focus:ring-offset-purple-600">
-          提交咨询
-        </button>
-      </form>
-    </div>
+      </div>
+    </section>
 
-    <!-- FAQ -->
-    <div>
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">常见问题</h2>
-      <div class="max-w-3xl mx-auto space-y-4">
-        {[
-          {
-            question: "这款净衣宝适合老年人使用吗？",
-            answer: "是的，我们的产品专为老年人设计，操作简单，界面清晰，支持语音控制和远程操作，非常适合老年人使用。"
-          },
-          {
-            question: "安装需要专业人员吗？",
-            answer: "我们提供免费的专业安装服务，购买后我们的技术人员会与您联系预约安装时间。"
-          },
-          {
-            question: "产品保修期是多久？",
-            answer: "整机保修3年，核心部件保修5年，我们提供终身维护服务。"
-          },
-          {
-            question: "如何保养和维护？",
-            answer: "产品具有自清洁功能，建议每3个月使用一次清洁程序。滤芯需要每6-12个月更换一次，具体时间根据水质情况而定。"
-          }
-        ].map((faq, index) => (
-          <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
-            <button class="w-full px-6 py-4 text-left focus:outline-none">
-              <div class="flex items-center justify-between">
-                <span class="text-lg font-medium text-gray-900 dark:text-white">{faq.question}</span>
-                <svg class="h-5 w-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
+    <!-- Benefits Section -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">为什么选择我们的{service.title}？</h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          我们致力于为老年人提供最健康、最环保的洗衣解决方案
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {service.benefits.map((benefit, index) => (
+          <div class="bg-white p-6 rounded-xl shadow-md">
+            <div class="flex items-start">
+              <div class="flex-shrink-0 bg-blue-100 w-10 h-10 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                <span class="text-blue-600 font-medium">{index + 1}</span>
               </div>
-              <div class="mt-2 text-gray-600 dark:text-gray-300">
-                {faq.answer}
-              </div>
-            </button>
+              <span class="text-gray-700 leading-relaxed">{benefit}</span>
+            </div>
           </div>
         ))}
       </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="mb-16">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900">常见问题</h2>
+        <p class="mt-4 text-xl text-gray-600 max-w-3xl mx-auto">
+          关于{service.title}的常见问题解答
+        </p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+          {service.faqs.map((faq) => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <details class="group">
+                <summary class="px-6 py-4 flex justify-between items-center cursor-pointer">
+                  <h3 class="text-lg font-medium text-gray-900">{faq.question}</h3>
+                  <svg class="w-5 h-5 text-gray-500 transition-transform duration-200 group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div class="px-6 pb-4 text-gray-600">
+                  {faq.answer}
+                </div>
+              </details>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div id="contact" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-12 text-center mb-12">
+      <h2 class="text-3xl font-bold mb-4">立即体验{service.title}服务</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        为您的家人提供安全、健康的净水洗衣服务，让生活更美好
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a 
+          href="/contact" 
+          class="px-8 py-3 bg-white text-blue-600 rounded-md hover:bg-gray-100 transition-colors font-medium"
+        >
+          免费预约
+        </a>
+        <a 
+          href="tel:+400-669-2119" 
+          class="px-8 py-3 border border-white text-white rounded-md hover:bg-blue-700 transition-colors font-medium"
+        >
+          400-669-2119
+        </a>
+      </div>
     </div>
-  </div>
+  </main>
 </DefaultLayout>
