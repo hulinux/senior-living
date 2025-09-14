@@ -71,19 +71,22 @@ const testimonials = [
 // Sample news
 const news = [
   {
-    title: '公司荣获"2025年度养老服务创新企业"称号',
+    title: '第六期助养师培训班圆满结束',
     date: '2025-06-15',
-    excerpt: '我司凭借创新的服务模式和卓越的客户体验，荣获行业权威奖项'
+    excerpt: '第六期助养师培训班圆满结束，为养老服务行业输送更多专业人才',
+    image: '/images/news/train6.jpg'
   },
   {
-    title: '新推出老年人专属保险计划',
-    date: '2025-05-28',
-    excerpt: '针对65岁以上老年人的专属保险计划，覆盖更全面，保费更优惠'
+    title: '第三期助养师培训班圆满结束',
+    date: '2024-12-14',
+    excerpt: '第三期助养师培训班圆满结束，为养老服务行业输送更多专业人才',
+    image: '/images/news/train3.jpg'
   },
   {
-    title: '社区健康讲座圆满结束',
-    date: '2025-05-10',
-    excerpt: '在多个社区举办的老年人健康知识讲座获得热烈反响'
+    title: '第一期助养师培训班圆满结束',
+    date: '2024-03-31',
+    excerpt: '第一期助养师培训班圆满结束，为养老服务行业输送更多专业人才',
+    image: '/images/news/train1.jpg'
   }
 ];
 ---
@@ -92,20 +95,6 @@ const news = [
   <!-- Hero Section -->
   <div class="relative">
     <HeroCarousel />
-    <!-- <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-      <div class="text-center px-4">
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">让晚年生活更美好</h1>
-        <p class="text-xl text-white mb-8 max-w-2xl mx-auto">专业、贴心的老年人生活服务，让每一位老人都能享受幸福安康的晚年</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contact" class="px-6 py-3 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition-colors">
-            免费咨询
-          </a>
-          <a href="/services" class="px-6 py-3 bg-white text-purple-700 rounded-md hover:bg-gray-100 transition-colors">
-            了解服务
-          </a>
-        </div>
-      </div>
-    </div> -->
   </div>
 
   <!-- Services Section -->
@@ -246,7 +235,18 @@ const news = [
             class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
           >
             <div class="h-48 bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
-              <span class="text-4xl">📰</span>
+              {item.image ? (
+              <img 
+                src={item.image} 
+                alt={item.title}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+            ) : (
+              <div class="h-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+                <span class="text-4xl">📰</span>
+              </div>
+            )}
             </div>
             <div class="p-6">
               <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">{item.date}</p>
