@@ -10,14 +10,14 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/db": "^0.17.2",
-    "@astrojs/rss": "4.0.12",
-    "@astrojs/svelte": "^7.1.0"
+    "@astrojs/db": "0.18.3",
+    "@astrojs/rss": "4.0.14",
+    "@astrojs/svelte": "7.2.2"
   },
   "devDependencies": {
     "@astrojs/tailwind": "6.0.2",
     "@types/node": "^24.2.1",
-    "astro": "^5.10.1",
+    "astro": "5.16.0",
     "daisyui": "^5.1.7",
     "postcss": "^8.5.6",
     "svelte": "^5.1.16",
