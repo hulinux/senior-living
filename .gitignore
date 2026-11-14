@@ -19,3 +19,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# yarn PnP artifacts + install cache (project now uses node-modules linker)
+.pnp.cjs
+.pnp.loader.mjs
+.yarn/install-state.gz
+.yarn/unplugged/
