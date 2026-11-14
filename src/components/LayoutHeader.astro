@@ -37,21 +37,35 @@ const isSectionActive = (section: string) => currentPath.startsWith(section);
             </svg>
             <span class={`absolute bottom-0 left-0 w-full h-0.5 bg-purple-600 dark:bg-purple-400 transition-all duration-200 ${isSectionActive('/products') || isSectionActive('/services') ? 'scale-100' : 'scale-0 group-hover:scale-100'}`}></span>
           </button>
-          <div class="absolute left-0 mt-2 w-64 rounded-md shadow-lg bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-            <div class="py-1">
-              <h3 class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider">产品</h3>
-              <a href="/products/laundry" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                净衣宝
+          <div class="absolute left-0 top-full mt-2 w-80 rounded-xl bg-white dark:bg-gray-800 shadow-xl ring-1 ring-gray-200 dark:ring-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+            <div class="p-2">
+              <p class="px-3 pt-1 pb-1 text-xs font-semibold tracking-wider text-purple-600 dark:text-purple-400">产品</p>
+              <a href="/products/laundry" class="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-purple-50 dark:hover:bg-gray-700">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 dark:bg-purple-900/40 text-xl">🚿</span>
+                <span class="min-w-0">
+                  <span class="block text-sm font-medium text-gray-900 dark:text-white">净衣宝</span>
+                  <span class="block truncate text-xs text-gray-500 dark:text-gray-400">洗衣 · 净水设备</span>
+                </span>
               </a>
-              <h3 class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-2">服务</h3>
-              <a href="/services/care" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                居家康养服务
+
+              <p class="px-3 pt-2 pb-1 text-xs font-semibold tracking-wider text-blue-600 dark:text-blue-400">服务</p>
+              <a href="/services/care" class="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-blue-50 dark:hover:bg-gray-700">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/40 text-xl">👵</span>
+                <span class="min-w-0">
+                  <span class="block text-sm font-medium text-gray-900 dark:text-white">居家康养服务</span>
+                  <span class="block truncate text-xs text-gray-500 dark:text-gray-400">24小时专业陪护</span>
+                </span>
               </a>
-              <h3 class="px-4 py-2 text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mt-3">公益</h3>
-              <a href="/services/insurance" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
-                孝行天下 康复无忧
+
+              <p class="px-3 pt-2 pb-1 text-xs font-semibold tracking-wider text-emerald-600 dark:text-emerald-400">公益</p>
+              <a href="/services/insurance" class="flex items-center gap-3 rounded-lg px-3 py-2.5 transition-colors hover:bg-emerald-50 dark:hover:bg-gray-700">
+                <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-100 dark:bg-emerald-900/40 text-xl">🛡️</span>
+                <span class="min-w-0">
+                  <span class="block text-sm font-medium text-gray-900 dark:text-white">孝行天下 康复无忧</span>
+                  <span class="block truncate text-xs text-gray-500 dark:text-gray-400">养老公益行动</span>
+                </span>
               </a>
-           </div>
+            </div>
           </div>
         </div>
 
