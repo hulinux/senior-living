@@ -3,7 +3,10 @@ interface Props {}
 
 const {} = Astro.props;
 
-// Sample carousel images (replace with actual image paths)
+// 滚动背景轮播（3 张）。结构全部用自包含 scoped CSS 实现：
+// 显式高度(460px) + 绝对定位 inset:0 铺满(object-fit:cover)。
+// 不依赖 Tailwind、不依赖百分比高度链——Chrome/Safari/国产内核、
+// 深色/浅色模式下都不会把图塌成 0 高度露出黑底。
 const carouselImages = [
   {
     src: "/images/love-and-joy.jpeg",
@@ -26,64 +29,110 @@ const carouselImages = [
 ];
 ---
 
-<div class="relative w-full h-[460px]" data-carousel-wrapper>
-  <div class="carousel w-full h-full image-slideshow">
-    {
-      carouselImages.map((image, index) => (
-        <div id={`slide${index + 1}`} class="carousel-item relative w-full">
-          <img
-            src={image.src}
-            alt={image.alt}
-            class="w-full h-full object-cover object-center"
-          />
-          <div class="absolute inset-0 bg-black bg-opacity-20 flex flex-col items-center justify-center text-center text-white px-4">
-            <h1 class="text-4xl md:text-5xl font-bold mb-4">{image.title}</h1>
-            <h3 class="text-xl md:text-2xl max-w-2xl">{image.description}</h3>
+<div class="hero" data-carousel-wrapper>
+  <div class="slideshow">
+    <div class="track">
+      {
+        carouselImages.map((image) => (
+          <div class="slide">
+            <img src={image.src} alt={image.alt} class="slide-img" loading="lazy" />
+            <div class="slide-overlay">
+              <h1 class="slide-title">{image.title}</h1>
+              <h3 class="slide-desc">{image.description}</h3>
+            </div>
           </div>
-        </div>
-      ))
-    }
+        ))
+      }
+    </div>
   </div>
 </div>
 
 <style>
-  .indicator {
-    opacity: 0.4;
-  }
-  .image-slideshow {
-    overflow: hidden;
-    white-space: nowrap;
+  .hero {
     position: relative;
-  }
-  .image-slideshow > div {
-    animation: move 15s ease-in-out 2s infinite alternate;
-    display: inline-block;
-  }
-  .image-slideshow > div div {
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    height: 460px;
+    overflow: hidden;
+    background: #1f2937; /* 图没加载时的兜底，不再是纯黑 */
   }
-  .image-slideshow h1 {
-    padding: 15px;
+  .slideshow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .track {
+    display: flex;
+    width: 300%;
+    height: 460px;
+    animation: hero-slide 15s ease-in-out 2s infinite alternate;
+  }
+  .slide {
+    position: relative;
+    width: 33.3333%;
+    height: 460px;
+    flex: 0 0 33.3333%;
+  }
+  .slide-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .slide-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 1rem;
+  }
+  .slide-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem;
+    line-height: 1.2;
+  }
+  .slide-desc {
+    font-size: 1.375rem;
+    max-width: 42rem;
     margin: 0;
+    line-height: 1.5;
   }
-  .image-slideshow h3 {
-    padding: 0 15px 15px 15px;
-    margin: 0;
+  @media (min-width: 768px) {
+    .slide-title {
+      font-size: 3rem;
+    }
+    .slide-desc {
+      font-size: 1.5rem;
+    }
   }
-  @keyframes move {
+  @keyframes hero-slide {
     0%,
-    30% {
-      transform: translateX(0%);
+    28% {
+      transform: translateX(0);
     }
     36%,
-    66% {
-      transform: translateX(-100%);
+    64% {
+      transform: translateX(-33.3333%);
     }
     72%,
     100% {
-      transform: translateX(-200%);
+      transform: translateX(-66.6667%);
     }
   }
 </style>
